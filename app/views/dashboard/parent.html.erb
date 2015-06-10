@@ -1,1 +1,20 @@
 <h1>Welcome, <%= @parent.name %></h1>
+<p><%= @parent.student.name %>'s grades:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Assignment</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grades.each do |grade| %>
+      <tr>
+        <td><%= grade.assignment.name %></td>
+        <td><%= grade.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

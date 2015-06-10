@@ -17,10 +17,12 @@ class DashboardController < ApplicationController
 
   def student
     @student = Student.find_by_id(session[:user_id])
+    @grades = Grade.where(student_id: session[:user_id]).all
   end
 
   def parent
     @parent = Parent.find_by_id(session[:user_id])
+    @grades = Grade.where(student_id: @parent.student.id).all
   end
 
   def teacher

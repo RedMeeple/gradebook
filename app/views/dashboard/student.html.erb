@@ -1,1 +1,19 @@
 <h1>Welcome, <%= @student.name %></h1>
+<p>Your grades:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Assignment</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grades.each do |grade| %>
+      <tr>
+        <td><%= grade.assignment.name %></td>
+        <td><%= grade.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
