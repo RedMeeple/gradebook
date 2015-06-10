@@ -1,6 +1,6 @@
 <p>
   <strong>Assignment:</strong>
-  <%= @grade.assignment_id %>
+  <%= @grade.assignment.name %>
 </p>
 
 <p>
@@ -10,7 +10,7 @@
 
 <p>
   <strong>Student:</strong>
-  <%= @grade.student_id %>
+  <%= @grade.student.name %>
 </p>
 
 <%= link_to 'Edit', edit_grade_path(@grade) %> |

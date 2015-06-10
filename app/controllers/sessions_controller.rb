@@ -28,12 +28,12 @@ class SessionsController < ApplicationController
         end
       end
     else
-      flash.now[:notice] = "User and Password do not match our records."
+      flash.now[:notice] = "Please Login"
     end
   end
 
   def logout
-    session[:user_id] = nil
+    session[:user_id]= nil
     redirect_to sessions_login_path, notice: "Logout Successful"
   end
 

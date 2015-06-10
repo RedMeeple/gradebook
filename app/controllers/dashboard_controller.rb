@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  before_action :instructor_logged_in?, only: [:instructor]
+  before_action :teacher_logged_in?, only: [:instructor]
   before_action :student_logged_in?, only: [:student]
   before_action :parent_logged_in?, only: [:parent]
 
@@ -27,7 +27,7 @@ class DashboardController < ApplicationController
     @teacher = Teacher.find_by_id(session[:user_id])
   end
 
-  private def instructor_logged_in?
+  private def teacher_logged_in?
     unless Teacher.find_by_id(session[:user_id]) && (session[:user_type] == "teacher")
       redirect_to sessions_login_path, notice: 'User or Password does not match our records.'
     end

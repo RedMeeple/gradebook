@@ -1,4 +1,5 @@
 class AssignmentsController < ApplicationController
+  before_action :logged_in?
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
   # GET /assignments
@@ -58,6 +59,12 @@ class AssignmentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to assignments_url, notice: 'Assignment was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  private def logged_in?
+    unless Teacher.find_by_id(session[:user_id]) && (session[:user_type] == "teacher")
+      redirect_to sessions_login_path, notice: 'Please login to view this page.'
     end
   end
 

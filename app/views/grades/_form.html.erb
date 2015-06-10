@@ -13,15 +13,14 @@
 
   <div class="field">
     <%= f.label :assignment_id %><br>
-    <%= f.number_field :assignment_id %>
+    <%= f.select :assignment_id, @assignments.map{ |a| [a.name, a.id] } %>
   </div>
   <div class="field">
     <%= f.label :score %><br>
     <%= f.number_field :score %>
   </div>
   <div class="field">
-    <%= f.label :student_id %><br>
-    <%= f.number_field :student_id %>
+    <%= f.hidden_field :student_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
