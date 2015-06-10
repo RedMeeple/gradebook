@@ -10,7 +10,27 @@
   <%= @assignment.due %>
 </p>
 
-<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
-<%= link_to 'Back', assignments_path %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
 
-<%= link_to 'Home', root_path %>
+  <tbody>
+    <% @these_grades = @grades.select{ |grade| grade.assignment_id == @assignment.id} %>
+    <% @these_grades.each do |grade| %>
+      <tr>
+        <td><%= grade.student.name %></td>
+        <td><%= grade.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default"><%= link_to 'All Assignments', assignments_path %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Home', root_path %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_assignment_path(@assignment) %></button>
+</div>

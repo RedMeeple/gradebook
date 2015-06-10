@@ -13,7 +13,8 @@
   <%= @grade.student.name %>
 </p>
 
-<%= link_to 'Edit', edit_grade_path(@grade) %> |
-<%= link_to 'Back', grades_path %>
-
-<%= link_to 'Home', root_path %>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_grade_path(@grade) %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'View All Grades', grades_path %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Home', root_path %></button>
+</div>

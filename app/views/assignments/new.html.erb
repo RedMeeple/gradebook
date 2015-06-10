@@ -2,6 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', assignments_path %>
-
-<%= link_to 'Home', root_path %>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default"><%= link_to 'All Assignments', assignments_path %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Home', root_path %></button>
+</div>

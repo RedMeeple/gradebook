@@ -29,15 +29,4 @@ class DashboardController < ApplicationController
     @teacher = Teacher.find_by_id(session[:user_id])
   end
 
-  private def student_logged_in?
-    unless Student.find_by_id(session[:user_id]) && (session[:user_type] == "student")
-      redirect_to sessions_login_path, notice: 'User or Password does not match our records.'
-    end
-  end
-
-  private def parent_logged_in?
-    unless Parent.find_by_id(session[:user_id]) && (session[:user_type] == "parent")
-      redirect_to sessions_login_path, notice: 'User or Password does not match our records.'
-    end
-  end
 end

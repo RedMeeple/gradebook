@@ -12,4 +12,23 @@
  *
  *= require_tree .
  *= require_self
+ *= require "bootstrap"
  */
+
+.title{
+ font-family: cursive;
+ .img{
+   height: 80px;
+   margin-left: 20px;
+ }
+}
+
+.description{
+ font-family: cursive;
+}
+
+.name{
+ font-family: ariel;
+ font-weight: bolder;
+ font-size: 15px;
+}
