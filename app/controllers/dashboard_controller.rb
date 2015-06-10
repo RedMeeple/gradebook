@@ -12,6 +12,7 @@ class DashboardController < ApplicationController
       redirect_to :controller => 'dashboard', :action => 'parent'
     else
       redirect_to sessions_login_path
+    end
   end
 
   def student

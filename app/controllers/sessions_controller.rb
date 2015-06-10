@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
           session[:user_type] = "teacher"
-          redirect_to dashboard_instructor_path, notice: "Login Successful"
+          redirect_to dashboard_teacher_path, notice: "Login Successful"
         else
           flash.now[:notice] = "User and Password do not match our records."
         end
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
           session[:user_type] = "parent"
-          redirect_to dashboard_student_path, notice: "Login Successful"
+          redirect_to dashboard_parent_path, notice: "Login Successful"
         else
           flash.now[:notice] = "User and Password do not match our records."
         end
