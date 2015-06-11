@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  assignment_id: 1
+  assignment: :one
   score: 1
-  student_id: 1
+  student: :one
 
 two:
-  assignment_id: 1
+  assignment: :one
   score: 1
-  student_id: 1
+  student: :one

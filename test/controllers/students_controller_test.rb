@@ -1,4 +1,11 @@
 require 'test_helper'
+require 'students_controller.rb'
+
+class StudentsController < ApplicationController
+  def teacher_logged_in?
+    true
+  end
+end
 
 class StudentsControllerTest < ActionController::TestCase
   setup do
@@ -18,7 +25,7 @@ class StudentsControllerTest < ActionController::TestCase
 
   test "should create student" do
     assert_difference('Student.count') do
-      post :create, student: { email: @student.email, name: @student.name, password_digest: @student.password_digest }
+      post :create, student: { email: @student.email, name: @student.name, password: "password" }
     end
 
     assert_redirected_to student_path(assigns(:student))

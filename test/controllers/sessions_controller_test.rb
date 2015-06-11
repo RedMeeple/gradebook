@@ -8,7 +8,7 @@ class SessionsControllerTest < ActionController::TestCase
 
   test "should get logout" do
     get :logout
-    assert_response :success
+    assert_response 302
   end
 
 end

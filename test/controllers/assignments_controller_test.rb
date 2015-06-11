@@ -1,4 +1,11 @@
 require 'test_helper'
+require 'assignments_controller'
+
+class AssignmentsController < ApplicationController
+  def teacher_logged_in?
+    true
+  end
+end
 
 class AssignmentsControllerTest < ActionController::TestCase
   setup do
@@ -21,7 +28,7 @@ class AssignmentsControllerTest < ActionController::TestCase
       post :create, assignment: { due: @assignment.due, name: @assignment.name }
     end
 
-    assert_redirected_to assignment_path(assigns(:assignment))
+    assert_redirected_to assignments_path
   end
 
   test "should show assignment" do

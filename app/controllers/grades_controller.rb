@@ -19,6 +19,10 @@ class GradesController < ApplicationController
     @assignments = Assignment.all
   end
 
+  def bulk_new
+
+  end
+
   # GET /grades/1/edit
   def edit
   end

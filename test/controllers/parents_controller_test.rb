@@ -1,6 +1,14 @@
 require 'test_helper'
+require 'parents_controller.rb'
+
+class ParentsController < ApplicationController
+  def teacher_logged_in?
+    true
+  end
+end
 
 class ParentsControllerTest < ActionController::TestCase
+
   setup do
     @parent = parents(:one)
   end
@@ -18,7 +26,7 @@ class ParentsControllerTest < ActionController::TestCase
 
   test "should create parent" do
     assert_difference('Parent.count') do
-      post :create, parent: { email: @parent.email, name: @parent.name, password_digest: @parent.password_digest, student_id: @parent.student_id }
+      post :create, parent: { email: @parent.email, name: @parent.name, password: "password", student_id: 1 }
     end
 
     assert_redirected_to parent_path(assigns(:parent))
